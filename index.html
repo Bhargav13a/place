@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front-End Challenge</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            width: 100%;
+            padding: 20px;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .cta {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .cta:hover {
+            background-color: #0056b3;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            margin: 50px 0;
+        }
+
+        .hero {
+            max-width: 50%;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .image-placeholder {
+            width: 300px;
+            height: 300px;
+            background-color: #ddd;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Download Section */
+        .download {
+            background-color: #e0e0e0;
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .download .text {
+            flex: 1;
+        }
+
+        .download .cta {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .download .cta.action {
+            background-color: #333;
+        }
+
+        .download .cta.action:hover {
+            background-color: #222;
+        }
+
+        /* Mission Section */
+        .mission {
+            background-color: #fff;
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .mission .left, .mission .right {
+            flex: 1;
+        }
+
+        .mission h2 {
+            margin-bottom: 1rem;
+        }
+
+        .mission ul {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .mission ul li {
+            background-color: #e0e0e0;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .mission ul li input {
+            margin-right: 0.5rem;
+        }
+
+        /* Featured Section */
+        .featured {
+            background-color: #f9f9f9;
+            padding: 2rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        .featured h2 {
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            flex: 1;
+            max-width: 300px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-image {
+            height: 200px;
+            background-color: #e0e0e0;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            margin: 20px 0 10px;
+        }
+
+        p {
+            font-size: 0.875rem;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Call to Action Section */
+        .call-to-action {
+            text-align: center;
+            padding: 2rem;
+            background-color: #fff;
+            width: 100%;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+
+        .call-to-action p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .call-to-action .cta {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .call-to-action .cta:hover {
+            background-color: #0056b3;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">LOGO</div>
+        <nav>
+            <ul>    
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="cta">Call to action</a>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>The future of web design, today</h1>
+            <p>The future of web design, today</p>
+            <a href="#" class="cta">Call to action</a>
+        </section>
+        <section class="image-placeholder"></section>
+    </main>
+
+    <div class="download">
+        <div class="text">
+            <h2>Don’t forget to grab this one, it’s free!</h2>
+            <p>Download the Ultimate con tomate guide.</p>
+        </div>
+        <a href="#" class="cta action">Call to action</a>
+    </div>
+
+    <section class="mission">
+        <div class="left">
+            <h2>What we do</h2>
+            <p>Our mission is very important to the planet: we plant as many trees as possible.</p>
+            <p>Can you figure out?</p>
+        </div>
+        <div class="right">
+            <ul>
+                <li>
+                    <input type="checkbox" id="recycle" name="recycle">
+                    <label for="recycle">We recycle everything we see</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="reuse" name="reuse">
+                    <label for="reuse">We teach people how to reuse their stuff</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="solve" name="solve">
+                    <label for="solve">We believe in human beings as problem solvers</label>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="featured">
+        <h2>Featured things</h2>
+        <p>Our mission is very important to the planet: we plant as many trees as possible. Can you figure out?</p>
+    </section>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-image"></div>
+            <div class="card-content">
+                <h2>The future of web design, today</h2>
+                <p>The future of web design, today</p>
+                <button>Call to action</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image"></div>
+            <div class="card-content">
+                <h2>The future of web design, today</h2>
+                <p>The future of web design, today</p>
+                <button>Call to action</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image"></div>
+            <div class="card-content">
+                <h2>The future of web design, today</h2>
+                <p>The future of web design, today</p>
+                <button>Call to action</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Updated Call to Action Section -->
+    <section class="call-to-action">
+        <p>Our mission is very important to the planet: we plant as many trees as possible. Can you figure out?</p>
+        <a href="#" class="cta">Call to action</a>
+    </section>
+</body>
+</html>
